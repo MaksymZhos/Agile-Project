@@ -1,4 +1,4 @@
-let database = require("../database");
+let {Database, Chat} = require("../database");
 const multer = require('multer');
 
 async function keywordToImage(keyword) {
@@ -12,7 +12,35 @@ async function keywordToImage(keyword) {
 }
 
 
+let chatController = {
+  chat: (req, res) => {
+    let user = req.user
+    let searchUser = req.params.id;
+    let Allchat = Chat.filter((chat) => chat.id.includes(user.id));
+   
+    let Alluser = Database.filter((user) => Allchat.some((chat) => chat.id.includes(user.id)));
+    
 
+    let otherUser = Database.find((user) => user.id == searchUser);
+    let chat = Chat.find((chat) => chat.id.includes(user.id) );
+    console.log(chat)
+    res.render("reminder/chat.ejs", { chatLog:Allchat, user: user, chatItem: chat, otherUser: otherUser, Alluser: Alluser});
+  },
+  chatPost: (req, res) => {
+    let user = req.user
+    let searchUser = req.params.id;
+    let chat = Chat.find((chat) => chat.id.includes(user.id) );
+    let newChat = {
+      id: user.id,
+      date: new Date().toISOString(),
+      message: req.body.message
+    }
+    chat.messages.push(newChat);
+    res.redirect(`/chat/${searchUser}`);
+
+  }
+
+};
 
 let postsController = {
   new: (req, res) => {
@@ -60,12 +88,12 @@ let remindersController = {
     let reminderToFind = req.params.id;
     let user = req.user
     let searchResult = user.reminders.find(function (reminder) {
-      return reminder.id === reminderToFind;
+      return reminder.id == reminderToFind;
     });
     if (searchResult !== undefined) {
       res.render("reminder/single-reminder", { reminderItem: searchResult });
     } else {
-      res.render("reminder/index", { reminders: user.reminders });
+      res.render("reminder/index", { reminders: user.reminders, user: user});
     }
   },
 
@@ -135,4 +163,4 @@ let remindersController = {
   }
 };
 
-module.exports = {remindersController, postsController};
+module.exports = {remindersController, postsController, chatController};

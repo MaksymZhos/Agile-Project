@@ -24,7 +24,7 @@ let Database = [
         description: "Buy milk and bread from safeway",
         completed: false,
       },
-    ],
+    ]
   },
   {
     id: 2,
@@ -41,6 +41,74 @@ let Database = [
       },
     ],
   },
+  {
+    id: 3,
+    name: "Can Doe",
+    email: "can123@gmail.com",
+    password: "test",
+    role: "regular",
+    reminders: [
+      {
+        id: 1,
+        title: "Car shopping",
+        description: "Buy a Honda Civic",
+        completed: false,
+      },
+    ],
+  }
+];
+
+let Chat = [
+  {
+    id: [1,2],
+    messages:[
+      {
+        id: 1,
+        date: "2024-02-03",
+        message: "Hello, how are you?"
+      },
+      {
+        id: 2,
+        date: "2021-09-01",
+        message: "I am good, how about you?"
+      },
+      {
+        id: 1,
+        date: "2024-03-05",
+        message: "Hahahahahah"
+      },
+      {
+        id: 2,
+        date: "2024-03-05",
+        message: "Cheuwsday init"
+      }
+    ]
+  },
+  {
+    id: [1,3],
+    messages:[
+      {
+        id: 1,
+        date: "2024-02-03",
+        message: "Hello, how are you?"
+      },
+      {
+        id: 3,
+        date: "2021-09-01",
+        message: "I am good, how about you?"
+      },
+      {
+        id: 1,
+        date: "2024-03-05",
+        message: "Hahahahahah"
+      },
+      {
+        id: 3,
+        date: "2024-03-05",
+        message: "Cheuwsday init"
+      }
+    ]
+  }
 ];
 
 const userModel = {
@@ -81,4 +149,4 @@ const userModel = {
   }
 };
 
-module.exports = { Database, userModel };
+module.exports = { Database, Chat, userModel };

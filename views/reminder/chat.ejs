@@ -1,0 +1,85 @@
+<section style="background-color: #eee;">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+          <div class="card">
+            <div class="card-body">
+              <ul id="messages" class="list-unstyled mb-0">
+                <% chatLog.forEach(function (chat) { %>
+                    <li class="p-2 border-bottom" style="background-color: #eee;">
+                        <a href="#!" class="d-flex justify-content-between">
+                          <div class="d-flex flex-row">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar"
+                              class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
+                            <div class="pt-1">
+                              <p class="fw-bold mb-0"><%= otherUser.name %></p>
+                              <p class="small text-muted"><%= chat.length-1 %></p>
+                            </div>
+                          </div>
+                          <div class="pt-1">
+                            <p class="small text-muted mb-1"><%= chat.length-1 %></p>
+                            
+                          </div>
+                        </a>
+                      </li>
+                  <% }) %>
+                
+              </ul>
+  
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="col-md-6 col-lg-7 col-xl-8">
+          <div class="overflow-auto h-25">
+            <div class="px-4 py-5 chat-box bg-white">
+              <ul class="list-unstyled">
+              <% chatItem.messages.forEach(function (chat) { %>
+                <% if (chat.id==user.id) { %>
+                 <li class="d-flex justify-content-between mb-4">
+                  <div class="media w-50 ml-auto mb-3">
+                    <div class="media-body">
+                      <div class="bg-primary rounded py-2 px-3 mb-2">
+                        <p class="text-small mb-0 text-white"><%= chat.message %></p>
+                      </div>
+                      <p class="small text-muted"><%= chat.date %></p>
+                    </div>
+                  </div>
+                </li>
+                <% } %>
+                <% if (chat.id==otherUser.id){ %>
+                  <li class="d-flex justify-content-between mb-4">
+                  <div class="media w-50 mb-3">
+                    <div class="media-body ml-3">
+                      <div class="bg-light rounded py-2 px-3 mb-2">
+                        <p class="text-small mb-0 text-muted"><%= chat.message %></p>
+                      </div>
+                      <p class="small text-muted"><%= chat.date %></p>
+                    </div>
+                  </div>
+                </li>
+                <% } %>
+              
+                
+              <% }) %>
+              </ul>             
+            </div>
+          </div>
+        
+          <form id="myForm" action="/chat/<%= otherUser.id %>" method="post" class="bg-light">
+            <div class="input-group">
+              <input id="input" type="text" name="message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="arrowButton">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+  
+      </div>
+  
+    </div>
+</section>

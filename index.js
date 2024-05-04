@@ -11,6 +11,7 @@ const { forwardAuthenticated, ensureAuthenticated, isAdmin } = require("./middle
 const multer = require('multer');
 const fs = require('fs');
 
+
 app.use(express.static("public"))
 
 // Adds session
@@ -41,6 +42,8 @@ app.set("view engine", "ejs");
 app.get("/", function(req, res){
     res.render("index", { isAuthenticated: req.isAuthenticated() });
 })
+app.get("/chat/:id", ensureAuthenticated, interactionController.chatController.chat)
+app.post("/chat/:id", ensureAuthenticated, interactionController.chatController.chatPost)
 app.get("/post/new", ensureAuthenticated, interactionController.postsController.new)
 app.post("/post/new", ensureAuthenticated, interactionController.postsController.new)
 app.get("/reminders", ensureAuthenticated, interactionController.remindersController.list);
@@ -94,7 +97,6 @@ app.get('/github/callback',
         res.redirect('/');
     }
 );
-
 
 app.get("/logout", authController.logout);
 
