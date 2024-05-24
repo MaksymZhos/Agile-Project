@@ -33,11 +33,11 @@ function formatDate(timeString) {
 
         </div>
     </div>
-    <div style="text-align: left; margin-left: 70px;"><h3><%= post.Title %> </h3><p id="post"><%= post.Description %></p></div>
+    <div style="text-align: left;"><h3><%= post.Title %> </h3><p id="post"><%= post.Description %></p></div>
     <% if (post.Picture) { %>
         <img class="post-img" src="<%= "/" + post.Picture %>" alt="post_picture" width="400" height="200">
     <% } %>
-    <div class="like-section" style="text-align: left; margin-left: 70px;">
+    <div class="like-section" style="text-align: left;">
 
 
         <button style=" padding-top: 5px;padding-bottom: 5px; margin-top: 10px;border-radius: 24px; border: none; background-color: #d3dcdc ;" onclick="toggleLike('<%= post.PostID %>')">
