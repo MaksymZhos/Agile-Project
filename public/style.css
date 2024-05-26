@@ -684,6 +684,8 @@ a.post-link{
 
 .inbox {
   height: 10%;
+  padding-top: 15px;
+  margin-bottom: 8px; /* Spacing user inboxes out */
 }
 .friend_list {
   display: flex;
@@ -714,7 +716,24 @@ a.post-link{
   height: 100%;
   display: flex; /* Use flexbox for layout */
   align-items: center; /* Center items vertically */
-  
+}
+
+/* CSS for styling user profile icons in chat and friends windows */
+.chat_message img {
+  position: relative;
+  top: 10%;
+  width: 50px;
+  height: 50px;
+}
+
+.friend_list .chat_message h3 { /* Adjusts appearance of the users appearing in the friends tabs lists */
+  font-size: 1.6rem;
+  padding-top: 11px;
+}
+
+.message_content h1 { 
+  font-size: 1.75em; 
+  padding-bottom: 2px;
 }
 
 .profilePicture{
@@ -742,10 +761,30 @@ a.post-link{
 
 .extend a {
   font-size: 1vw;
+  padding-right: 20px;
 }
 
 .extend p {
   font-size: 1vw;
+}
+
+/* friends list */
+#list .extend {
+  padding-top: 18px; /* To align the button with the user's name */
+}
+
+/* friend requests */
+#request .extend {
+  padding-top: 10px; /* To align the button with the user's name */
+  padding-right: 20px;
+}
+
+.extend button {
+  border: none;
+  border-radius: 20px; /* Increase border radius for a more rounded button */
+  background-color: #D9D9D9; /* Add a background color */
+  padding: 5px 10px; /* top/bottom, left/right */
+  font-size: 0.9rem;
 }
 
 /* Adding space between the Create Post window title and the container below it 

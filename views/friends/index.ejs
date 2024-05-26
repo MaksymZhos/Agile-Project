@@ -61,7 +61,7 @@
                 <div class="friend_list">
                     <div class="chat_message">
                         <img src="<%= "/" + friend.Friend.ProfilePicture %>" alt="pp" width="50" height="50" class="profile_picture">
-                        <h3><a href=<%="/profile/" + friend.Friend.UserID%>><%= friend.Friend.UserNickName %></a></h3>
+                        <h3><a href=<%="/profile/" + friend.Friend.UserID%>><%= friend.Friend.UserName %>  (<%= friend.Friend.UserNickName %>)</a></h3>
                     </div>
                     <div class="extend">
                         <a href=<%="/chat/check/" + friend.Friend.UserID%>><button>Send a Message</button></a>
@@ -72,7 +72,7 @@
                 <div class="friend_list">
                     <div class="chat_message">
                         <img src="<%= "/" + friend.Friend.ProfilePicture %>" alt="pp" width="50" height="50" class="profile_picture">
-                        <h3><a href=<%="/profile/" + friend.Friend.UserID%>><%= friend.Friend.UserNickName %></a></h3>
+                        <h3><a href=<%="/profile/" + friend.Friend.UserID%>><%= friend.Friend.UserName %>  (<%= friend.Friend.UserNickName %>)</a></h3>
                     </div>
                     <div class="extend">
                         <a href=<%="/chat/check/" + friend.Friend.UserID%>><button>Send a Message</button></a>
@@ -85,7 +85,7 @@
                 <div class="friend_list">
                     <div class="chat_message">
                         <img src="<%= "/" + friendRequest.User.ProfilePicture %>" alt="pp" width="50" height="50" class="profile_picture">
-                        <h3><a href=<%="/profile/" + friendRequest.User.UserID%>><%= friendRequest.User.UserNickName %></a></h3>
+                        <h3><a href=<%="/profile/" + friendRequest.User.UserID%>><%= friendRequest.User.UserName %>  (<%= friendRequest.User.UserNickName %>)</a></h3>
                     </div>
                     <div class="extend">
                         <form action=<%= "/acceptFriend/" + friendRequest.User.UserID %> method="POST">
