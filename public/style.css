@@ -20,6 +20,10 @@ h6 {
   margin-bottom: 0; /* Removing the margin underneath all window names */
 }
 
+h2 {
+  font-weight: normal; /* Unbolding window names */
+}
+
 header.masthead {
   position: relative;
   background-color: #fff;
@@ -371,31 +375,36 @@ footer.footer {
   line-height: 1.15;
 }
 .section_name{
- 
   color: #003c71;
   text-align: center;
   height: 44px;
   font-size: 2vw !important;
-  background-color: #C1C6C6;
+  background-color: #D3DCDC;
   padding-top: 3px;
 }
 
 .section2_name{
   color: #000000;
   text-align: center;
-  height: 44px;
+  height: 52px;
   font-size: 2vw !important;
   background-color: #ffffff;
 }
 
 /* Friends tab names */
 #l, #r, #a{
-  padding-top: 4px; /* Adding padding to compensate for no margin underneath Window title */
+  padding-top: 6px; /* Adding padding to compensate for no margin underneath Window title */
+}
+
+/* Repositioning tab icons */
+#l svg, #r svg, #a svg { 
+  position: relative;
+  top: 15%;
 }
 
 /* Adding padding between the Friends tab names and their respective icons*/
 #l p, #r p, #a p{
-  padding-left: 4px;
+  padding-left: 10px;
 }
 
 .section_search{
@@ -458,7 +467,7 @@ footer.footer {
 }
 
 .active {
-  background-color: #a1b0c0;
+  background-color: rgba(0, 60, 113, 0.3); /* 30% opacity BCIT blue */
 }
 
 .search_field {
