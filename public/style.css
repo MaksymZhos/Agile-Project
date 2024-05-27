@@ -790,6 +790,55 @@ button.btn.btn-default{
 button.btn.btn-default:hover{
   background-color: #0056b3;
 }
+
+/* CSS for styling Edit button for Reminders */
+.btn.btn-warning{
+  background-color: #003C71;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem; 
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-warning:hover{
+  color: white;
+  background-color: #0056b3;
+}
+.btn-warning:active{
+  color: white !important;
+  background-color: #0056b3 !important;
+}
+.btn-warning:focus {
+  color: white !important;
+  background-color: #0056b3 !important;
+  box-shadow: inset 0 1px 1px #3f85d1, 0 0 8px #3f85d1 !important;
+}
+
+/* CSS for styling Delete button for Reminders */
+.btn-danger{
+  background-color: #D9D9D9;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-danger:hover{
+  color: black;
+  background-color: #bebcbc;
+}
+.btn-danger:active{
+  color: black !important;
+  background-color: #bebcbc !important;
+}
+.btn-danger:focus {
+  color: black !important;
+  background-color: #bebcbc !important;
+  box-shadow: inset 0 1px 1px #bebcbc, 0 0 8px #bebcbc !important;
+}
+
 .post{
   margin-top: 15px;
   margin-left: 20%;
@@ -1044,4 +1093,34 @@ a.post-link{
 to compensate for no h2 bottom margin */
 .container .form-group:first-child {
   padding-top: 5px;
+}
+
+/* CSS for styling Reminder pages */
+.page-header {
+  margin: 5px 0px;
+}
+p.lead.mb-3 {
+  padding-top: 8px;
+}
+
+/* Reminder page specifically */
+.list-group-item h3 {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.list-group-item h4 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.list-group-item .completed {
+  margin-top: 25px;
+  font-weight: 700;
+}
+
+.list-group-item span {
+  /* position: relative; */
+  /* bottom: 1px; */
+  font-size: 0.85em;
+  margin-right: 2px;
 }

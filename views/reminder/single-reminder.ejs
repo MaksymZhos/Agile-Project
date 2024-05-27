@@ -1,14 +1,14 @@
 <div class="container">
-  <h1 class="page-header">Reminders</h1>
+  <h1 class="page-header">View Reminder</h1>
     <ul class="list-group">
       <li class="list-group-item">
         <h3><strong><%= reminderItem.Title %>: </strong></h3>
         <h4><%= reminderItem.Description %></h4>
-        <h4>Completed:
+        <h4 class="completed">Completed:
           <% if (reminderItem.Completed == true) { %>
-            <span class="label label-success">True</span>
+            <span class="badge badge-success">True</span>
           <% } else if (reminderItem.Completed == false) { %>
-            <span class="label label-danger">False</span>
+            <span class="badge badge-danger">False</span>
           <% } %>
         </h4>
 
