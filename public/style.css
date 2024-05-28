@@ -1092,7 +1092,7 @@ a.post-link{
 /* Adding space between the Create Post window title and the container below it 
 to compensate for no h2 bottom margin */
 .container .form-group:first-child {
-  padding-top: 5px;
+  padding-top: 25px;
 }
 
 /* CSS for styling Reminder pages */
@@ -1123,4 +1123,28 @@ p.lead.mb-3 {
   /* bottom: 1px; */
   font-size: 0.85em;
   margin-right: 2px;
+}
+
+/* CSS for styling Create Post form-groups */
+.form-group label {
+  font-size: 1.15rem;
+}
+
+.form-group.title label {
+  position: relative;
+  right: 47%;  
+}
+
+.form-group.description label {
+  position: relative;
+  right: 43%;
+}
+
+.form-group.attachments label {
+  position: relative;
+  right: 42%;
+}
+
+.form-group.attachments input {
+  padding-bottom: 32px;
 }

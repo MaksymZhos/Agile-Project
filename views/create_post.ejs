@@ -21,16 +21,17 @@
     <h2>Create Post</h2>
     <div class="container">
         <form  action="/upload" method="POST" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="title">Title</label>
-            <input style="border-radius: 24px !important;" type="text" class="form-control" id="titleInput" placeholder="Title" name="title" maxlength="100">
+          <div class="form-group title">
+            <label for="titleInput">Title</label>
+            <input type="text" class="form-control" id="titleInput" placeholder="Title" name="title" maxlength="100">
           </div>
-          <div class="form-group">
-            <label for="description">Description</label>
-            <textarea style="border-radius: 24px !important;" class="form-control" id="descriptionInput" rows="3" placeholder="Description" name="description" maxlength="2500"></textarea>
+          <div class="form-group description">
+            <label for="descriptionInput">Description</label>
+            <textarea style="border-radius: 10px !important;" class="form-control" id="descriptionInput" rows="3" placeholder="Description" name="description" maxlength="2500"></textarea>
           </div>
-          <div>
-            <input type="file" class="form-control picInput" name="photo" accept="image/*">
+          <div class="form-group attachments">
+            <label for="picInput">Attachments</label>
+            <input type="file" class="form-control picInput" id="picInput" name="photo" accept="image/*">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
